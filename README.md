@@ -14,6 +14,10 @@ AI Engineer in 6 months — March to September 2026
 
 ## Progress
 - [x] Week 1 Day 1 — First Claude API call ← you'll tick this tonight
+- [x] Day 2 — Understood tokens, system prompts, parameters ✅
+      KEY INSIGHT: Model doesn't know internal company data
+      THIS is exactly why RAG exists — to inject your 
+      private data into the model's context at query time
 
 ## Setup & Security
 
