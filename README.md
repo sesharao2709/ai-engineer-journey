@@ -46,6 +46,55 @@ AI Engineer in 6 months — March to September 2026
    This is why "margin call" and "explain margin call" score so high (0.9787)
    while "weather" scores low (0.2378) - the vectors capture MEANING, not just words
 
+
+## Day 4 Observations:
+
+1. Duplicate ingestion is a real production problem
+   → Always check before inserting
+   → ivfflat index needs 1000+ docs to work reliably
+
+2. Vague queries produce ambiguous results
+   → "What happens when account drops?" → 0.43 (unclear)
+   → "What is a margin call?" → 0.85+ (precise)
+   → Solution: Query rewriting in production
+
+3. Similarity thresholds matter
+   → Below 0.5 = uncertain, better to return nothing
+   → Above 0.8 = high confidence match
+   → In finance: wrong answer is worse than no answer
+
+4. The database itself gives you hints
+   → "ivfflat index created with little data" warning
+   → Always read system messages — they tell the truth
+```
+
+---
+
+## What's Coming Tomorrow — Day 5
+
+This is the one you've been building toward:
+```
+Day 1 → Claude API          ✅
+Day 2 → LLM understanding   ✅
+Day 3 → Embeddings          ✅
+Day 4 → Vector database     ✅
+Day 5 → Connect ALL of it   ← tomorrow
+```
+
+Tomorrow you build the complete RAG loop:
+```
+User question
+     ↓
+Embed the question
+     ↓
+Search your pgvector database
+     ↓
+Retrieve relevant chunks
+     ↓
+Feed to Claude with context
+     ↓
+Grounded answer with citations
+
 ## Setup & Security
 
 ### Installation
