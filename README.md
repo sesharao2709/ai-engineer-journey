@@ -68,6 +68,28 @@ AI Engineer in 6 months — March to September 2026
    → Always read system messages — they tell the truth
 ```
 
+## Day 5 — Complete RAG System ✅
+
+1. What are the 4 steps in the RAG pipeline?
+   → Embed question → Retrieve chunks → Generate answer → Audit log
+
+2. Why do we set min_similarity = 0.4?
+   → Below 0.4 the match is too uncertain
+     In finance wrong answer is worse than no answer
+
+3. What happened on Test 4 — Apple stock price?
+   → System correctly refused — nothing in knowledge base matched
+     No hallucination — clean "I don't have that information"
+
+4. Why is audit logging non-negotiable at Schwab?
+   → Every AI interaction must be traceable for compliance
+     Regulators can ask "why did the AI say that" at any time
+
+5. How is this different from just asking Claude directly?
+   → Direct Claude = only knows training data
+     RAG Claude = knows YOUR documents + training data
+     RAG Claude = cites sources + refuses when unsure
+     RAG Claude = you control the knowledge base
 ---
 
 ## What's Coming Tomorrow — Day 5
