@@ -191,17 +191,8 @@ if __name__ == "__main__":
     print("🚀 Schwab Compliance RAG System — Day 5")
     print("Testing complete pipeline...\n")
 
-    # Test 1 — Should find answer ✅
-    ask("What is a margin call and when does it get triggered?")
-
-    # Test 2 — Should find answer ✅
-    ask("How much money do I need to start day trading?")
-
-    # Test 3 — Should find answer ✅
-    ask("How do I send an international wire transfer?")
-
-    # Test 4 — Should REFUSE ❌ — not in knowledge base
-    ask("What is the current stock price of Apple?")
-
-    # Test 5 — Tests your similarity threshold
-    ask("What happens if I lose money in my account?")
+ask("What is the minimum deposit to open a margin account?")
+ask("How long do international wire transfers take?")
+ask("What documents do I need to open an account?")
+ask("What is the early withdrawal penalty for an IRA?")
+ask("What is the margin interest rate?")

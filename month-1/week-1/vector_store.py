@@ -41,9 +41,15 @@ def setup_database():
             id          SERIAL PRIMARY KEY,
             content     TEXT NOT NULL,
             source      VARCHAR(255),
+            chunk_index INTEGER,
             embedding   vector(768),
             created_at  TIMESTAMP DEFAULT NOW()
         );
+    """)
+
+    cursor.execute("""
+        ALTER TABLE documents
+        ADD COLUMN IF NOT EXISTS chunk_index INTEGER
     """)
 
     # Create index for fast similarity search
